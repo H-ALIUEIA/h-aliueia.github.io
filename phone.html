@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <body>
+      <style>
+          button {
+              width: 70px;
+              height: 40px;
+              background-color: green;
+              color: white;
+              border-radius: 10px;
+              box-shadow: grey;
+          }
+      </style>
+      
+      <center>
+          <button onclick="copyText()">Copy</button>
+      </center>
+      <script>
+          function copyText()
+          {
+              navigator.clipboard.writeText("https://h-aliueia.github.io/rss.xml");
+          }
+      </script>
+  </body>
+</html>
