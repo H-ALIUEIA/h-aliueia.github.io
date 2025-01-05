@@ -1,0 +1,41 @@
+import itertools
+import sys
+
+if(len(sys.argv) < 1):
+	print("python3 adam-israel.py (75-85)")
+	exit()
+
+abraham_age = int(sys.argv[1])#75-85
+unchanged_values = 1127
+standart = unchanged_values+abraham_age+430+42
+list1 = [162,187,182,35,30,34,30,32,30,29,130]
+list2 = [62,67,53,135,130,134,130,132,130,79,70]
+
+combinations = [
+    (list1[0], list2[0]),
+    (list1[1], list2[1]),
+    (list1[2], list2[2]),
+    (list1[3], list2[3]),
+    (list1[4], list2[4]),
+    (list1[5], list2[5]),
+    (list1[6], list2[6]),
+    (list1[7], list2[7]),
+    (list1[8], list2[8]),
+    (list1[9], list2[9]),
+    (list1[10], list2[10])
+]
+
+result = list(itertools.product(*combinations))
+result_lists = [list(item) for item in result]
+
+g = []
+for i in result_lists:
+	number = 0
+	for j in range(0,len(i)):
+		number += i[j]
+	fin = standart+number
+	if(fin % 49 == 0):
+		if(fin/49 not in g):
+			g.append(fin/49)
+			print(i)
+			print(fin/49)
